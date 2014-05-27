@@ -4,7 +4,7 @@ JavaScript - Exercises, Solution
 ## JavaScript functions
 
 ```js
-/* [ function that reverse a number. ] */
+/* function that reverse a number. */
 function reverse_a_number(x){
 	x = x + "";
 	return x.split("").reverse().join("");
@@ -13,7 +13,7 @@ console.log(reverse_a_number(12345)); // 54321
 ```
 
 ```js
-/* [ function that generates all combinations of a string. ] */
+/* function that generates all combinations of a string. */
 function substrings(str){
   var substr = [];
   for (var x = 0; x < str.length; x++) {
@@ -27,10 +27,8 @@ console.log(substrings("red")); // ["r", "re", "red", "e", "ed", "d"]
 ```
 
 ```js
-/* 
-   function that returns a passed string with letters in alphabetical order. 
-   Assume punctuation and numbers symbols are not included in the passed string. 
-   */
+/* function that returns a passed string with letters in alphabetical order. Assume punctuation 
+   and numbers symbols are not included in the passed string. */
 
 function alphabet_order(str){
  return str.split('').sort().join('');
@@ -39,9 +37,8 @@ console.log(alphabet_order("webmaster"));  // abeemrstw
 ```
 
 ```js
-/* function that accepts a string as a parameter and converts the first letter 
-   of each word of the string in upper case.
-   */
+/* function that accepts a string as a parameter and converts the first letter of each word 
+   of the string in upper case. */
 
 function uppercase(str){
   var array = str.split(' '),
@@ -53,4 +50,21 @@ function uppercase(str){
   return newarray.join(' ');
 }
 console.log(uppercase("this is a lowercase")); // This Is A Lowercase
+```
+
+```js
+/* function that accepts a string as a parameter and find the longest word within the string. */
+
+function find_longest_word(str) {
+  var array = str.match(/\w[a-z]{0,}/gi),
+      result = array[0];
+
+  for(var x = 1 ; x < array.length ; x++) {
+    if(result.length < array[x].length) {
+    	result = array[x];
+    } 
+  }
+  return result;
+}
+console.log(find_longest_word('Web Development Tutorial')); // Development
 ```
